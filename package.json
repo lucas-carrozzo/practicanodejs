@@ -1,0 +1,19 @@
+{
+  "name": "practicanodejs",
+  "version": "1.0.0",
+  "description": "practica github node js curso",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximarsoficial/practicanodejs.git"
+  },
+  "author": "maximiliano mercado diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximarsoficial/practicanodejs/issues"
+  },
+  "homepage": "https://github.com/maximarsoficial/practicanodejs#readme"
+}
