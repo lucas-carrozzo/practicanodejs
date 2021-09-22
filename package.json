@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/maximarsoficial/practicanodejs/issues"
   },
-  "homepage": "https://github.com/maximarsoficial/practicanodejs#readme"
+  "homepage": "https://github.com/maximarsoficial/practicanodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
