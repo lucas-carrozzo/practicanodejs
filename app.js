@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+app.use(express.json())
+
 
 app.get('/' , (req,res) =>{
     res.json({
@@ -7,6 +9,11 @@ app.get('/' , (req,res) =>{
     } );
 } );
 
+app.post('/user/new' , (req,res) =>{
+    const bodyData = req.body;
+    res.json(bodyData);
+   
+} );
 
 // app.post('/' , (req,res) =>{
 //     res.json({
