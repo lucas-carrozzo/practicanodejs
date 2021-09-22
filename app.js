@@ -12,7 +12,7 @@ app.get('/players', (req, res) => {
 
 app.get('/players/:role', (req, res) => {
     //should respond with only the players that have with the especified role. Status 200.
-    //If there's no player with the specified role it should respond with {"error": "No player found"} and Status 404. usar y buscar find / FILTER 
+    //If there's no player with the specified role it should respond with {"error": "No player found"} and Status 404. usar y buscar find / FILTER  PARA SABER EL TAMAÑO EL LEGHT 
 });
 
 app.put('/players', (req, res) => {
