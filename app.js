@@ -1,35 +1,28 @@
+//Change the version of this program in package.json to 1.1.0
+//For all the excersices Postman is recommended.
 const express = require('express');
 const app = express();
-app.use(express.json())
+const port = process.env.PORT || 3000;
+const playersData = require('');//should require the data.json file
+app.use(express.json());
 
+app.get('/players', (req, res) => {
+    //should respond with the "players" array inside playersData and Status 200    
+});
 
-app.get('/' , (req,res) =>{
-    res.json({
-        hello: 'incio'
-    } );
-} );
+app.get('/players/:role', (req, res) => {
+    //should respond with only the players that have with the especified role. Status 200.
+    //If there's no player with the specified role it should respond with {"error": "No player found"} and Status 404.
+});
 
-app.post('/user/new' , (req,res) =>{
-    const bodyData = req.body;
-    res.json(bodyData);
-   
-} );
+app.put('/players', (req, res) => {
+    //Should recive player data from request body.
+    //Should console.log the response.
+    //Response should be {"operation": "add player", "status": "accepted"} with status 200 if the body request is valid.
+    //Response should be {"operation": "add player", "status": "refused", "details": "Invalid body"} with status 409 if any property is missing.
+    //The Only valid properties are the ones at every player object in data.json.
+});
 
-// app.post('/' , (req,res) =>{
-//     res.json({
-//         hello: 'vista del post'
-//     } );
-// } );
-
-// app.get('/user/:id' , (req,res) =>{
-//   const userId = req.params.id;
-//   const userAge = req.params.age;
-//   const userRole = req.params.role;
-//   console.log(userAge);
-//   res.status(200).send(userRole);
-// } );
-
-app.listen(3000, () =>{
-    console.log('servidor levantado en el puerto 3000')
-} )
-
+app.listen(port, () => {
+    console.log('Express server started at port ' + port)
+});
