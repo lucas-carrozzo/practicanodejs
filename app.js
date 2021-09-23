@@ -3,11 +3,21 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
-const playersData = require('');//should require the data.json file
+const playersData = require('./data.json');//should require the data.json file
 app.use(express.json());
 
 app.get('/players', (req, res) => {
-    //should respond with the "players" array inside playersData and Status 200    
+    //should respond with the "players" array inside playersData and Status 200 
+    try {
+        res.status(200).json({
+          players: playersData.players
+        });
+      } catch (err) {
+        res.status(400).json({
+          message: "Error",
+          err
+        });
+      }   
 });
 
 app.get('/players/:role', (req, res) => {
@@ -22,6 +32,12 @@ app.put('/players', (req, res) => {
     //Response should be {"operation": "add player", "status": "refused", "details": "Invalid body"} with status 409 if any property is missing.
     //The Only valid properties are the ones at every player object in data.json.
 });
+
+app.get('/' , (req,res) =>{
+    res.json({
+        hello: 'inicio'
+    } );
+} );
 
 app.listen(port, () => {
     console.log('Express server started at port ' + port)
